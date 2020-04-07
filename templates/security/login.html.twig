@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'user.title.login'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5 mb-sm-2">
+                <h2>{{ 'user.label.login'|trans }}</h2>
+
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">
+                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                        </div>
+                    {% endif %}
+
+                    <div class="form-group">
+                        <label for="user-email">{{ 'user.form.email'|trans }}</label>
+                        <input type="email" value="{{ last_username }}" name="email" id="user-email"
+                               class="form-control" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-password">{{ 'user.form.password'|trans }}</label>
+                        <input type="password" name="password" id="user-password" class="form-control" required>
+                    </div>
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                    <button class="btn btn-success" type="submit">
+                        {{ 'user.label.login'|trans }}
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

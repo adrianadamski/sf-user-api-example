@@ -1,0 +1,18 @@
+user:
+  title:
+    login: Log In
+    create: User create
+  form:
+    email: Email
+    password: Password
+    success:
+      create: Account created
+  label:
+    create: Create an account
+    login: Log In
+    logout: Logout
+
+form:
+  action:
+    create: Create
+    save: Save

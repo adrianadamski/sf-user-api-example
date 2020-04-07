@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'user.title.create'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-sm-2">
+                <h2>{{ 'user.label.create'|trans }}</h2>
+                {{ form_start(form) }}
+                    {{ form_widget(form) }}
+
+                    <button type="submit" class="btn btn-success">
+                        {{ 'form.action.create'|trans }}
+                    </button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
